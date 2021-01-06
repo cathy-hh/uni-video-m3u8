@@ -1,7 +1,5 @@
-# uniapp-APP-m3u8
 #### uniapp APP端,H5+,下载m3u8,断点续传,以及播放
 #### 用法及参数请看dome，
-#### 下载后先重新获取manifest.json的appid
 ## 示例
 ```
 import downm3u8 from '@/utils/downm3u8.js'//引入插件包，注意路劲
