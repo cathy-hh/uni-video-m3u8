@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="MobileOptimized" content="320" />
+		<title>Hello H5+</title>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+		<script src="https://unpkg.com/video.js/dist/video.js"></script>
+		<script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+	</head>
+	<body>
+		<!-- <div id="video" style="width:98%;height:300px;background-color:#000000;margin:auto"></div> -->
+		<video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="300" height="268">
+			<!-- 	<source src="http://hls.videocc.net/ccb547c108/c/ccb547c108b24806a418164ce3429c7a_1.m3u8">
+			</source> -->
+			<!-- 	<source src="http://localhost:13131/_www/static/video/1618380180266.m3u8">
+			</source> -->
+			<!-- <source src="/Users/Cathy/Library/Developer/CoreSimulator/Devices/D23D5D18-261A-4252-B96E-B63C2A39F60B/data/Containers/Data/Application/484FD0E1-6145-4CED-B47F-C88A23D8723C/Documents/1609348085080.m3u8"></source> -->
+			<!-- <source src="/storage/emulated/0/Android/data/io.dcloud.HBuilder/apps/HBuilder/doc/video/1618380180266.m3u8"> -->
+		</video>
+	</body>
+	<script>
+		function plusReady() {
+			var videoObj = videojs('my_video_1');
+			// Android
+			if (plus.os.name != 'iOS') {
+				var url = './video/1618380180266.m3u8'
+				videoObj.src({
+					src: url,
+					type: 'application/x-mpegURL',
+					withCredentials: true
+				});
+			} else {
+				// var url = plus.io.convertLocalFileSystemURL('../video/1618380180266.m3u8')
+				// videoObj.src({
+				// 	src: url,
+				// 	type: 'application/x-mpegURL',
+				// 	withCredentials: true
+				// });  
+				var url = './video/bee.mp4'
+				videoObj.src({
+					src: url.toRemoteURL(),
+					// type: 'application/x-mpegURL',
+				});
+				// plus.io.resolveLocalFileSystemURL('_www/static/video/bee.mp4', function(entry) {
+				// 	alert(entry.toRemoteURL());
+				// 	videoObj.src({
+				// 		src: entry.toRemoteURL(),
+				// 		// type: 'application/x-mpegURL',
+				// 	});
+
+				// }, function(e) {
+				// 	alert("Resolve file URL failed: " + e.message);
+				// })
+			}
+		}
+		if (window.plus) {
+			plusReady()
+		} else {
+			document.addEventListener('plusready', plusReady, false);
+		}
+
+
+		// videoObj.src = videoObj
+		// alert(url)
+		// videoObj.src({
+		// 	src: url
+		// });
+	</script>
+</html>

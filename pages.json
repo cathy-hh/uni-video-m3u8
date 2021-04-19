@@ -1,16 +1,24 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		// {
+		// 	"path": "pages/index/playVideo",
+		// 	"style": {
+		// 		"navigationBarTitleText": "m3u8工具"
+		// 		// "usingComponents": {
+		// 		// 	"plv": "@/wxcomponents/polyv-sdk/plv/plv",
+		// 		// 	"polyv": "@/wxcomponents/polyv-sdk/components/polyv/polyv",
+		// 		// 	"player": "@/wxcomponents/polyv-sdk/components/player/player"
+
+		// 		// }
+		// 	}
+		// }, 
 		{
-			"path": "pages/index/index",
+			"path": "pages/index/downloadMp4",
 			"style": {
-				"navigationBarTitleText": "m3u8工具"
-				// "usingComponents": {
-				// 	"plv": "@/wxcomponents/polyv-sdk/plv/plv",
-				// 	"polyv": "@/wxcomponents/polyv-sdk/components/polyv/polyv",
-				// 	"player": "@/wxcomponents/polyv-sdk/components/player/player"
-								
-				// }
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
 			}
+
 		}
 	],
 	"globalStyle": {
